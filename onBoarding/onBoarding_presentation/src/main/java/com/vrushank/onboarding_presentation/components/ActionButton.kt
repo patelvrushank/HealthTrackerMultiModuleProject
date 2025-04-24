@@ -15,7 +15,7 @@ import com.vrushank.core_ui.LocalSpacing
 fun ActionButton(text:String,
                  onClick: () -> Unit,
                  modifier: Modifier = Modifier,
-                 isEnable:Boolean =false,
+                 isEnable:Boolean =true,
                  ) {
     Button(onClick = onClick, modifier = modifier, enabled = isEnable, shape = RoundedCornerShape(100.dp)) {
         Text(

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.android.library)
+    //alias(libs.plugins.hilt.plugin)
     kotlin("kapt")
 }
 
@@ -48,8 +49,14 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+
+    //implementation(libs.dagger.android.compiler)
+   // kapt(libs.dagger.android.compiler)
+
     implementation(libs.coil)
-    implementation(libs.dagger.android)
+    implementation(libs.dagger.android){
+        exclude(group = "com.google.dagger", module = "dagger-spi")
+    }
     kapt(libs.dagger.android.compiler)
     implementation(libs.retro.fit)
     implementation(libs.retro.fit.moshi)

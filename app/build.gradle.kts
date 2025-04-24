@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
    alias(libs.plugins.kotlin.compose)
 
+    alias(libs.plugins.hilt.plugin)
+    //id("dagger.hilt.android.plugin")
+
     kotlin("kapt")
 }
 
@@ -53,8 +56,18 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.coil)
-    implementation(libs.dagger.android)
+    implementation(libs.dagger.android){
+        exclude(group = "com.google.dagger", module = "dagger-spi")
+    }
+    //implementation(libs.dagger.android.compiler)
     kapt(libs.dagger.android.compiler)
+   // implementation(libs.dagger)
+    //implementation(libs.google.dagger.android)
+    //implementation(libs.dagger.compiler)
+    //implementation(libs.com.google.devtools.ksp.gradle.plugin)
+   // kapt(libs.dagger.android.compiler)
+    implementation(libs.androidx.navigation.compose)
+    //kapt(libs.dagger.android.compiler)
     implementation(libs.retro.fit)
     implementation(libs.retro.fit.moshi)
     implementation(libs.okHttp)
@@ -66,6 +79,8 @@ dependencies {
     implementation(libs.roomKtx)
     //kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
     kapt(libs.moshi)
+   // kapt("com.google.dagger:dagger-android-processor:2.56.2")
+    implementation(libs.androidx.navigation.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     //androidTestImplementation(libs.androidx.espresso.core)

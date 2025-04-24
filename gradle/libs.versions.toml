@@ -12,15 +12,22 @@ appcompat = "1.7.0"
 material = "1.12.0"
 jetbrainsKotlinJvm = "2.0.0"
 coil = "1.3.2"
-daggerVersion = "2.52"
+daggerVersion = "2.51.1"
+navigationCommon = "2.8.9"
 retrofit = "2.9.0"
 okHttpVersion = "5.0.0-alpha.2"
 moshi="1.15.0"
 room ="2.6.1"
 uiAndroid = "1.7.8"
 storage = "1.5.0"
+navigationCompose = "2.8.9"
+dagger = "2.56.2"
+daggerAndroid = "2.56.2"
+daggerCompiler = "2.56.2"
+comGoogleDevtoolsKspGradlePlugin = "1.5.30-1.0.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-common = { module = "androidx.navigation:navigation-common", version.ref = "navigationCommon" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -39,7 +46,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 dagger-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerVersion" }
-dagger-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerVersion" }
+dagger-android-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "daggerVersion" }
 
 retro-fit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retro-fit-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
@@ -52,6 +59,12 @@ roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = 
 roomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
 androidx-storage = { group = "androidx.test.services", name = "storage", version.ref = "storage" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+google-dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "daggerAndroid" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "daggerCompiler" }
+com-google-devtools-ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -59,5 +72,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-hilt-plugin = { id = "dagger.hilt.android.plugin", version.ref = "daggerVersion" }
+hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "daggerVersion" }
 
